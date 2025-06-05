@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "/";
+
+package proto;
+
+//登录
+message LoginRequest {
+  string Mobile=1;
+  string Password=2;
+}
+
+message LoginRepine {
+  uint64 Id = 1;
+}
+
+service User {
+  rpc Login (LoginRequest) returns (LoginRepine);
+}
